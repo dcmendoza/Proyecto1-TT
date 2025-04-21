@@ -3,6 +3,7 @@ Middleware de mensajería asincrónica implementado en un clúster con particion
 
 ```shell
 g++ broker.cpp -o broker -pthread
+g++ load_balancer.cpp -o load_balancer -pthread
 g++ producer.cpp -o producer
 g++ consumer.cpp -o consumer
 ```
@@ -10,11 +11,7 @@ g++ consumer.cpp -o consumer
 ```shell
 ./broker 8081
 ./broker 8082
-```
-
-```shell
-sudo cp haproxy.cfg /etc/haproxy/haproxy.cfg
-sudo systemctl restart haproxy
+./broker 8083
 ```
 
 ```shell
